@@ -1,3 +1,31 @@
 <div>
-    <h1>Ahora entramos en el real time</h1>
+    <h1>Productos realtime</h1>
+    <div>
+        {{#each dataFromFile}}
+        <div>
+            <h3>{{title}}</h3>
+            <h3>{{character}}</h3>
+            <h3>{{alilation}}</h3>
+        </div>
+        {{/each}}
+    </div>
+    <div>
+        <h2>Agregra productos nuevos</h2>
+        <form id="form">
+            <form action="procesar.php" method="post">
+                <label for="titulo">Título de la obra:</label>
+                <input type="text" id="titulo" name="titulo" required><br><br>
+            
+                <label for="nombre">Nombre del personaje:</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+            
+                <label for="afiliacion">Afiliación del personaje:</label>
+                <input type="text" id="afiliacion" name="afiliacion" required><br><br>
+            
+                <input type="submit" value="Enviar">
+            </form>
+        </form>
+    </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
